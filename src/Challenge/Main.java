@@ -6,15 +6,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Player user = new Player("Natalia", 10, 20);
-        System.out.println(user.toString());
+        System.out.println(user);
         saveObject(user);
 
         user.setHitPoints(15);
         System.out.println(user);
         user.setWeapon("Arrow");
         saveObject(user);
-        loadObject(user);
         System.out.println(user);
+
+        ISaveable monster = new Monster("Silver Dragon", 25, 7);
+        System.out.println(((Monster)monster).getStrength());
+        saveObject(monster);
     }
 
     public static ArrayList<String> readValues() {
